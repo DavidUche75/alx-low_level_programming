@@ -1,4 +1,5 @@
 #include "main.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,26 +11,33 @@ int _putchar(char c);
  * Return:void
  */
 
-void print_number(int n)
-{
+void print_number(int n);
 
-	unsigned int n1 = 0;
-
-	if  (n < 0)
-	{
-		n1 = -n;
-		_putchar('-');
-	}
-
-	else
-	{
-		n1 = n;
-	}
-
-	if (n1 / 10)
-	{
-		print_number(n1 / 10);
-	}
-
-	_putchar((n1 % 10) + '0');
+int main() {
+    int num = 12345;
+    print_number(num);
+    return 0;
 }
+
+void print_number(int n) {
+    if (n < 0) {
+        _putchar('-');
+        n = -n;
+    }
+
+    int divisor = 1;
+    int temp = n;
+
+    while (temp > 9) {
+        temp /= 10;
+        divisor *= 10;
+    }
+
+    while (divisor > 0) {
+        int digit = n / divisor;
+        _putchar(digit + '0');
+        n %= divisor;
+        divisor /= 10;
+    }
+}
+
