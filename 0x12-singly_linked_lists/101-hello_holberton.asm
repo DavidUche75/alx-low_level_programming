@@ -7,6 +7,6 @@ main:
     pop rbp
     ret
 format:
-    hello_msg db "Hello, Holberton",10,0   ; Message to be printed with newline character
+    hello_msg db `Hello, Holberton\n`,0
 
 
