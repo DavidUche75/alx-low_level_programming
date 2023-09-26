@@ -9,7 +9,7 @@
 
 int pop_listint(listint_t **head)
 {
-	listint_t *tp;
+	listint_t *tmp;
 	int personal_data;
 
 	if (*head == NULL)
